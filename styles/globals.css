@@ -1,0 +1,266 @@
+:root {
+  --max-width: 1100px;
+  --border-radius: 12px;
+  --font-mono: ui-monospace, Menlo, Monaco, 'Cascadia Mono', 'Segoe UI Mono',
+    'Roboto Mono', 'Oxygen Mono', 'Ubuntu Monospace', 'Source Code Pro',
+    'Fira Mono', 'Droid Sans Mono', 'Courier New', monospace;
+
+  --foreground-rgb: 0, 0, 0;
+  --background-start-rgb: 214, 219, 220;
+  --background-end-rgb: 255, 255, 255;
+
+  --primary-glow: conic-gradient(
+    from 180deg at 50% 50%,
+    #16abff33 0deg,
+    #0885ff33 55deg,
+    #54d6ff33 120deg,
+    #0071ff33 160deg,
+    transparent 360deg
+  );
+  --secondary-glow: radial-gradient(
+    rgba(255, 255, 255, 1),
+    rgba(255, 255, 255, 0)
+  );
+
+  --tile-start-rgb: 239, 245, 249;
+  --tile-end-rgb: 228, 232, 233;
+  --tile-border: conic-gradient(
+    #00000080,
+    #00000040,
+    #00000030,
+    #00000020,
+    #00000010,
+    #00000010,
+    #00000080
+  );
+
+  --callout-rgb: 238, 240, 241;
+  --callout-border-rgb: 172, 175, 176;
+  --card-rgb: 180, 185, 188;
+  --card-border-rgb: 131, 134, 135;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --foreground-rgb: 255, 255, 255;
+    --background-start-rgb: 0, 0, 0;
+    --background-end-rgb: 0, 0, 0;
+
+    --primary-glow: radial-gradient(rgba(1, 65, 255, 0.4), rgba(1, 65, 255, 0));
+    --secondary-glow: linear-gradient(
+      to bottom right,
+      rgba(1, 65, 255, 0),
+      rgba(1, 65, 255, 0),
+      rgba(1, 65, 255, 0.3)
+    );
+
+    --tile-start-rgb: 2, 13, 46;
+    --tile-end-rgb: 2, 5, 19;
+    --tile-border: conic-gradient(
+      #ffffff80,
+      #ffffff40,
+      #ffffff30,
+      #ffffff20,
+      #ffffff10,
+      #ffffff10,
+      #ffffff80
+    );
+
+    --callout-rgb: 20, 20, 20;
+    --callout-border-rgb: 108, 108, 108;
+    --card-rgb: 100, 100, 100;
+    --card-border-rgb: 200, 200, 200;
+  }
+}
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+html,
+body {
+  max-width: 100vw;
+  overflow-x: hidden;
+}
+
+body {
+  color: rgb(var(--foreground-rgb));
+  background: linear-gradient(
+      to bottom,
+      transparent,
+      rgb(var(--background-end-rgb))
+    )
+    rgb(var(--background-start-rgb));
+}
+
+a {
+  color: inherit;
+  text-decoration: none!important;
+}
+
+.RSPBprogressBar {
+  height: 2px;
+  width: 30%;
+  line-height: 1;
+  border-radius: 10px;
+  position: relative;
+  background-color: rgb(207, 207, 207);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 0;
+  margin: 20px auto;
+}
+.RSPBprogressBar .RSPBstep {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 0;
+  position: absolute;
+  transform: translateX(-50%);
+  transition-property: all;
+  transition-timing-function: ease;
+}
+.RSPBprogressBar .RSPBprogressBarText {
+  color: white;
+  font-size: 10px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.RSPBprogressBar .RSPBprogression {
+  position: absolute;
+  transition: width 0.3s ease;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  border-radius: 10px;
+  background: #6047F9;
+  z-index: -1;
+}
+.navbar-nav .nav-link.active, .navbar-nav .show>.nav-link{
+  color: #F6CA56!important;
+}
+.navbar-toggler-icon{
+  background-color:white
+}
+
+/* login-form */
+.login-form-section {
+  text-align: center;
+}
+.login-form-section input[type="text"]{
+  border-radius: 5px;
+  border:solid 1px #ddd;
+  padding: 7px 10px;
+  background-color:rgba(96, 71, 249,0.2);
+}
+.modal-header{
+  justify-content: center!important;
+}
+.modal-content{
+  width:50%;
+  background-color:white  
+}
+.modal.show .modal-dialog{
+  display: flex;
+  justify-content: center;
+}
+.login-form-input-section{
+  padding: 10px 0px;
+}
+.login-form-input-section ::placeholder{
+  font-size: 12px;
+}
+.modal-footer{
+  text-align: center;
+  display: block;
+  border: none;
+  text-decoration: none;
+}
+
+.login-form-btn {
+  padding: 20px 0px;
+}
+.login-form-btn a{
+  padding: 7px 50px;
+  color: white;
+  background-color: #6047F9;
+  border: solid 1px #6047F9;
+  transition: all 600ms 0s;
+  text-decoration: none;
+}
+.login-form-btn a:hover{
+  background-color: transparent;
+  border: solid 1px #6047F9;
+  color: #6047F9;
+}
+.new-register-section{
+  padding-top: 10px;
+}
+.new-register-section span{
+  color: white;
+}
+/* sign-up-section */
+.signup-form-section {
+  text-align: center;
+}
+.signup-form-section input[type="text"]{
+  border-radius: 5px;
+  border:solid 1px #ddd;
+  padding: 7px 10px;
+  background-color:rgba(96, 71, 249,0.2);
+}
+.signup-form-input-section{
+  padding: 5px 0px;
+}
+.signup-form-input-section ::placeholder{
+  font-size: 12px;
+}
+.signup-form-btn {
+  padding: 10px 0px;
+}
+.signup-form-btn a{
+  padding: 7px 50px;
+  color: white;
+  background-color: #6047F9;
+  border: solid 1px #6047F9;
+  transition: all 600ms 0s;
+  text-decoration: none;
+}
+.signup-form-btn a:hover{
+  background-color: transparent;
+  border: solid 1px #6047F9;
+  color: #6047F9;
+}
+.new-register-section a{
+  color: #6047F9;
+  font-weight:500;
+}
+.modal-content{
+  width: 43%!important;
+}
+.modal-footer{
+  justify-content: center!important;
+}
+@media (prefers-color-scheme: dark) {
+  html {
+    color-scheme: dark;
+  }
+}
+@media (max-width:500px){
+  .RSPBprogressBar {
+    width:45%;
+  }
+}
+@media(max-width:991px){
+  .modal-content{
+    width: 80%!important;
+  }
+  .modal-footer{
+    display: block!important;
+  }
+}
